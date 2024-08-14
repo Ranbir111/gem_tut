@@ -33,7 +33,7 @@ function DataBlock() {
 
     // Select a voice
     const voices = speechSynthesis.getVoices();
-    utterance.voice = voices[10]; // Choose a specific voice
+    utterance.voice = voices[1]; // Choose a specific voice
 
     // Speak the text
     speechSynthesis.speak(utterance);
