@@ -4,7 +4,7 @@ import React from 'react'
 function Adsence() {
   return (
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7942829668761041"
-     crossorigin="anonymous"></script>
+     crossOrigin="anonymous"></script>
   )
 }
 
