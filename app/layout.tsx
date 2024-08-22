@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Adsence from "./components/Adsence";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="dark" lang="en">
+      <head>
+        <Adsence />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
