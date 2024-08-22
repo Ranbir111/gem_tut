@@ -1,14 +1,16 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 
 function AdsBanner() {
-  useEffect(()=>{
+  useEffect(() => {
     try {
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
+        {}
+      );
     } catch (error) {
       console.log(error);
     }
-  },[])
+  }, []);
   return (
     <ins
       className="adsbygoogle"
