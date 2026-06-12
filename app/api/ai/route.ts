@@ -1,16 +1,20 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 
-// Access your API key as an environment variable (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI("AIzaSyB_spH9lXCkcqaVJRZETV_pVARJaTHET2Q");
-
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+// The client gets the API key from the environment variable `GEMINI_API_KEY`.
+const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY!});
 
 async function run(msg: string) {
   const prompt = msg;
 
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
+  // const result = await model.generateContent(prompt);
+  // const response = await result.response;
+  // const text = response.text();
+
+  const response = await ai.models.generateContent({
+    model: process.env.GEMINI_MODEL_NAME!,
+    contents: prompt,
+  });
+  const text = response.text;
   return text;
 }
 
